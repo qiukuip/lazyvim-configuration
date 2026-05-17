@@ -193,40 +193,5 @@ return {
         "flake8",
       },
     },
-  },
-
-  -- langchain based on python
-  -- 1. 虚拟环境切换 (核心)
-  {
-    "linux-cultist/venv-selector.nvim",
-    dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
-    opts = {
-      anaconda_base_path = "/Users/longkun/.opt/miniconda3",
-      anaconda_envs_path = "/Users/longkun/.opt/miniconda3/envs",
-    },
-    keys = { { "<leader>vs", "<cmd>VenvSelect<cr>" } },
-  },
-
-  -- 2. 格式化与 Lint (使用 Ruff, LangChain 社区标准)
-  {
-    "nvimtools/none-ls.nvim",
-    config = function()
-      local null_ls = require("null-ls")
-      null_ls.setup({
-        sources = {
-          null_ls.builtins.formatting.ruff,
-          null_ls.builtins.diagnostics.ruff,
-        },
-      })
-    end,
-  },
-
-  -- 3. 调试工具 (DAP)
-  {
-    "mfussenegger/nvim-dap-python",
-    ft = "python",
-    config = function()
-      require("dap-python").setup("python: /Users/longkun/.opt/miniconda3/bin/python")
-    end,
-  },
+  }
 }
