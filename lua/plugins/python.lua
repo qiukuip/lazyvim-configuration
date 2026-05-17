@@ -11,7 +11,7 @@ return {
     },
   },
 
-  -- 自动导入
+  -- 自动导入提示
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -23,6 +23,7 @@ return {
                 autoImportCompletions = true,
                 typeCheckingMode = "basic",
                 autoSearchPaths = true,
+                -- diagnosticMode = "openFilesOnly",
                 diagnosticMode = "workspace",
                 useLibraryCodeForTypes = true
               }
